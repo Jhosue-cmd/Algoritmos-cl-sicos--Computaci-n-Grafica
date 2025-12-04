@@ -1,0 +1,218 @@
+﻿namespace Algoritmo_de_lineas
+{
+    partial class frmDDA
+    {
+        /// <summary>
+        /// Variable del diseñador necesaria.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Limpiar los recursos que se estén usando.
+        /// </summary>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Código generado por el Diseñador de Windows Forms
+
+        /// <summary>
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBoxGrafico = new System.Windows.Forms.GroupBox();
+            this.groupBoxPuntos = new System.Windows.Forms.GroupBox();
+            this.lblX1 = new System.Windows.Forms.Label();
+            this.lblY1 = new System.Windows.Forms.Label();
+            this.txtX2 = new System.Windows.Forms.Label();
+            this.txtY2 = new System.Windows.Forms.Label();
+            this.txtX1 = new System.Windows.Forms.TextBox();
+            this.txtY1 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.groupBoxAcciones = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBoxGrafico.SuspendLayout();
+            this.groupBoxPuntos.SuspendLayout();
+            this.groupBoxAcciones.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(31, 69);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Dibujar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(158, 69);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Borrar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(15, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(411, 377);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // groupBoxGrafico
+            // 
+            this.groupBoxGrafico.Controls.Add(this.pictureBox1);
+            this.groupBoxGrafico.Location = new System.Drawing.Point(364, 17);
+            this.groupBoxGrafico.Name = "groupBoxGrafico";
+            this.groupBoxGrafico.Size = new System.Drawing.Size(426, 410);
+            this.groupBoxGrafico.TabIndex = 3;
+            this.groupBoxGrafico.TabStop = false;
+            this.groupBoxGrafico.Text = "Gráfico";
+            // 
+            // groupBoxPuntos
+            // 
+            this.groupBoxPuntos.Controls.Add(this.textBox4);
+            this.groupBoxPuntos.Controls.Add(this.textBox3);
+            this.groupBoxPuntos.Controls.Add(this.txtY1);
+            this.groupBoxPuntos.Controls.Add(this.txtX1);
+            this.groupBoxPuntos.Controls.Add(this.txtY2);
+            this.groupBoxPuntos.Controls.Add(this.txtX2);
+            this.groupBoxPuntos.Controls.Add(this.lblY1);
+            this.groupBoxPuntos.Controls.Add(this.lblX1);
+            this.groupBoxPuntos.Location = new System.Drawing.Point(19, 45);
+            this.groupBoxPuntos.Name = "groupBoxPuntos";
+            this.groupBoxPuntos.Size = new System.Drawing.Size(302, 130);
+            this.groupBoxPuntos.TabIndex = 4;
+            this.groupBoxPuntos.TabStop = false;
+            this.groupBoxPuntos.Text = "Puntos";
+            this.groupBoxPuntos.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // lblX1
+            // 
+            this.lblX1.AutoSize = true;
+            this.lblX1.Location = new System.Drawing.Point(18, 31);
+            this.lblX1.Name = "lblX1";
+            this.lblX1.Size = new System.Drawing.Size(22, 16);
+            this.lblX1.TabIndex = 0;
+            this.lblX1.Text = "X1";
+            // 
+            // lblY1
+            // 
+            this.lblY1.AutoSize = true;
+            this.lblY1.Location = new System.Drawing.Point(160, 31);
+            this.lblY1.Name = "lblY1";
+            this.lblY1.Size = new System.Drawing.Size(23, 16);
+            this.lblY1.TabIndex = 1;
+            this.lblY1.Text = "Y1";
+            // 
+            // txtX2
+            // 
+            this.txtX2.AutoSize = true;
+            this.txtX2.Location = new System.Drawing.Point(18, 98);
+            this.txtX2.Name = "txtX2";
+            this.txtX2.Size = new System.Drawing.Size(22, 16);
+            this.txtX2.TabIndex = 2;
+            this.txtX2.Text = "X2";
+            this.txtX2.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // txtY2
+            // 
+            this.txtY2.AutoSize = true;
+            this.txtY2.Location = new System.Drawing.Point(160, 98);
+            this.txtY2.Name = "txtY2";
+            this.txtY2.Size = new System.Drawing.Size(23, 16);
+            this.txtY2.TabIndex = 3;
+            this.txtY2.Text = "Y2";
+            // 
+            // txtX1
+            // 
+            this.txtX1.Location = new System.Drawing.Point(46, 28);
+            this.txtX1.Name = "txtX1";
+            this.txtX1.Size = new System.Drawing.Size(100, 22);
+            this.txtX1.TabIndex = 4;
+            // 
+            // txtY1
+            // 
+            this.txtY1.Location = new System.Drawing.Point(189, 28);
+            this.txtY1.Name = "txtY1";
+            this.txtY1.Size = new System.Drawing.Size(100, 22);
+            this.txtY1.TabIndex = 5;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(46, 92);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.TabIndex = 6;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(189, 92);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 22);
+            this.textBox4.TabIndex = 7;
+            // 
+            // groupBoxAcciones
+            // 
+            this.groupBoxAcciones.Controls.Add(this.button2);
+            this.groupBoxAcciones.Controls.Add(this.button1);
+            this.groupBoxAcciones.Location = new System.Drawing.Point(24, 205);
+            this.groupBoxAcciones.Name = "groupBoxAcciones";
+            this.groupBoxAcciones.Size = new System.Drawing.Size(296, 133);
+            this.groupBoxAcciones.TabIndex = 5;
+            this.groupBoxAcciones.TabStop = false;
+            this.groupBoxAcciones.Text = "Acciones";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBoxAcciones);
+            this.Controls.Add(this.groupBoxPuntos);
+            this.Controls.Add(this.groupBoxGrafico);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBoxGrafico.ResumeLayout(false);
+            this.groupBoxPuntos.ResumeLayout(false);
+            this.groupBoxPuntos.PerformLayout();
+            this.groupBoxAcciones.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBoxGrafico;
+        private System.Windows.Forms.GroupBox groupBoxPuntos;
+        private System.Windows.Forms.Label txtY2;
+        private System.Windows.Forms.Label txtX2;
+        private System.Windows.Forms.Label lblY1;
+        private System.Windows.Forms.Label lblX1;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtY1;
+        private System.Windows.Forms.TextBox txtX1;
+        private System.Windows.Forms.GroupBox groupBoxAcciones;
+    }
+}
+
