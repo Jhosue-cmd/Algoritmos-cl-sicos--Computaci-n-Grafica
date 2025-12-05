@@ -37,6 +37,8 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuCirculos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCircunferencia = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuBresenhamModificado = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuParametrico = new System.Windows.Forms.ToolStripMenuItem();
             this.menuVentana = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCascada = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHorizontal = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,27 +83,27 @@
             this.menuXiaolin});
             this.menuLineas.Name = "menuLineas";
             this.menuLineas.Size = new System.Drawing.Size(224, 26);
-            this.menuLineas.Text = " Líneas";
+            this.menuLineas.Text = "📏 Líneas";
             // 
             // menuDDA
             // 
             this.menuDDA.Name = "menuDDA";
             this.menuDDA.Size = new System.Drawing.Size(224, 26);
-            this.menuDDA.Text = " DDA";
+            this.menuDDA.Text = "🔵 DDA";
             this.menuDDA.Click += new System.EventHandler(this.menuDDA_Click);
             // 
             // menuBresenham
             // 
             this.menuBresenham.Name = "menuBresenham";
             this.menuBresenham.Size = new System.Drawing.Size(224, 26);
-            this.menuBresenham.Text = " Bresenham";
+            this.menuBresenham.Text = "🟢 Bresenham";
             this.menuBresenham.Click += new System.EventHandler(this.menuBresenham_Click);
             // 
             // menuXiaolin
             // 
             this.menuXiaolin.Name = "menuXiaolin";
             this.menuXiaolin.Size = new System.Drawing.Size(224, 26);
-            this.menuXiaolin.Text = "Xiaolin Wu";
+            this.menuXiaolin.Text = "🟣 Xiaolin Wu";
             this.menuXiaolin.Click += new System.EventHandler(this.menuXiaolin_Click);
             // 
             // toolStripSeparator1
@@ -112,17 +114,33 @@
             // menuCirculos
             // 
             this.menuCirculos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuCircunferencia});
+            this.menuCircunferencia,
+            this.menuBresenhamModificado,
+            this.menuParametrico});
             this.menuCirculos.Name = "menuCirculos";
             this.menuCirculos.Size = new System.Drawing.Size(224, 26);
-            this.menuCirculos.Text = "Círculos";
+            this.menuCirculos.Text = "⭕ Círculos";
             // 
             // menuCircunferencia
             // 
             this.menuCircunferencia.Name = "menuCircunferencia";
-            this.menuCircunferencia.Size = new System.Drawing.Size(224, 26);
-            this.menuCircunferencia.Text = "Punto Medio";
+            this.menuCircunferencia.Size = new System.Drawing.Size(250, 26);
+            this.menuCircunferencia.Text = "🔵 Punto Medio";
             this.menuCircunferencia.Click += new System.EventHandler(this.menuCircunferencia_Click);
+            // 
+            // menuBresenhamModificado
+            // 
+            this.menuBresenhamModificado.Name = "menuBresenhamModificado";
+            this.menuBresenhamModificado.Size = new System.Drawing.Size(250, 26);
+            this.menuBresenhamModificado.Text = "🟢 Bresenham Modificado";
+            this.menuBresenhamModificado.Click += new System.EventHandler(this.menuBresenhamModificado_Click);
+            // 
+            // menuParametrico
+            // 
+            this.menuParametrico.Name = "menuParametrico";
+            this.menuParametrico.Size = new System.Drawing.Size(250, 26);
+            this.menuParametrico.Text = "🟠 Paramétrico";
+            this.menuParametrico.Click += new System.EventHandler(this.menuParametrico_Click);
             // 
             // menuVentana
             // 
@@ -229,6 +247,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem menuCirculos;
         private System.Windows.Forms.ToolStripMenuItem menuCircunferencia;
+        private System.Windows.Forms.ToolStripMenuItem menuBresenhamModificado;
+        private System.Windows.Forms.ToolStripMenuItem menuParametrico;
         private System.Windows.Forms.ToolStripMenuItem menuVentana;
         private System.Windows.Forms.ToolStripMenuItem menuCascada;
         private System.Windows.Forms.ToolStripMenuItem menuHorizontal;

@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Algoritmo_de_lineas.Circulos.view;
 
 namespace Algoritmo_de_lineas
 {
@@ -58,10 +52,20 @@ namespace Algoritmo_de_lineas
             AbrirFormularioHijo(new frmXiaolin());
         }
 
-        // Evento del menú - Circunferencia
+        // Eventos del menú - Circunferencias
         private void menuCircunferencia_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new frmCircuferenciacs());
+        }
+
+        private void menuBresenhamModificado_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new frmBresenhamModificado());
+        }
+
+        private void menuParametrico_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new frmParametrico());
         }
 
         // Eventos del menú - Ventana
@@ -108,16 +112,19 @@ namespace Algoritmo_de_lineas
         {
             MessageBox.Show(
                 "Algoritmos de Computación Gráfica\n\n" +
-                "Algoritmos de Líneas:\n" +
+                "━━━ ALGORITMOS DE LÍNEAS ━━━\n" +
                 "• DDA (Digital Differential Analyzer)\n" +
                 "• Bresenham\n" +
                 "• Xiaolin Wu (Anti-aliasing)\n\n" +
-                "Algoritmos de Círculos:\n" +
-                "• Punto Medio (8 octantes)\n\n" +
+                "━━━ ALGORITMOS DE CÍRCULOS ━━━\n" +
+                "• Punto Medio (8 octantes)\n" +
+                "• Bresenham Modificado (8 octantes)\n" +
+                "• Paramétrico (ecuaciones trigonométricas)\n\n" +
+                "━━━ INFORMACIÓN ━━━\n" +
                 "Desarrollado para: Computación Gráfica\n" +
                 "Framework: .NET Framework 4.8\n" +
                 "Año: 2025",
-                "Acerca de",
+                "Acerca de - Algoritmos Gráficos",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }

@@ -46,6 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Circulos\model\CBresenhamModificado.cs" />
+    <Compile Include="Circulos\model\CParametrico.cs" />
+    <Compile Include="Circulos\view\frmBresenhamModificado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Circulos\view\frmBresenhamModificado.Designer.cs">
+      <DependentUpon>frmBresenhamModificado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Circulos\view\frmParametrico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Circulos\view\frmParametrico.Designer.cs">
+      <DependentUpon>frmParametrico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lineas\model\CBresenham.cs" />
     <Compile Include="Circulos\model\CCircunferencia.cs" />
     <Compile Include="Lineas\model\CDDA.cs" />

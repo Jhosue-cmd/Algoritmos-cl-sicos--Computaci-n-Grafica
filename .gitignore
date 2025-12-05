@@ -1,0 +1,9 @@
+# Archivos de configuración de Visual Studio Code
+.vscode/
+
+# Archivos de configuración del IDE (ej. Visual Studio, a veces llamado .vs)
+.vs/
+
+# Carpetas y archivos específicos de GitHub Copilot
+/.vscode/CopilotSnapshots/
+
