@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Algoritmo_de_lineas.Circulos.view;
+using Algoritmo_de_lineas.Relleno.view;
 
 namespace Algoritmo_de_lineas
 {
@@ -68,6 +69,22 @@ namespace Algoritmo_de_lineas
             AbrirFormularioHijo(new frmParametrico());
         }
 
+        // Eventos del menú - Algoritmos de Relleno
+        private void menuScanLineFill_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new frmScan_LineFill());
+        }
+
+        private void menuFloodFill_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new frmFloodFills());
+        }
+
+        private void menuPatternFill_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new frmPatternFill());
+        }
+
         // Eventos del menú - Ventana
         private void menuCascada_Click(object sender, EventArgs e)
         {
@@ -120,9 +137,14 @@ namespace Algoritmo_de_lineas
                 "• Punto Medio (8 octantes)\n" +
                 "• Bresenham Modificado (8 octantes)\n" +
                 "• Paramétrico (ecuaciones trigonométricas)\n\n" +
+                "━━━ ALGORITMOS DE RELLENO ━━━\n" +
+                "• Scan-Line Fill (escaneo por líneas)\n" +
+                "• Flood Fill (relleno por semilla)\n" +
+                "• Pattern Fill (relleno con patrones)\n\n" +
                 "━━━ INFORMACIÓN ━━━\n" +
-                "Desarrollado para: Computación Gráfica\n" +
-                "Framework: .NET Framework 4.8\n" +
+                "Desarrollado por: [Tu Nombre]\n" +
+                "Código de Estudiante: [Tu Código]\n" +
+                "Curso: Computación Gráfica\n" +
                 "Año: 2025",
                 "Acerca de - Algoritmos Gráficos",
                 MessageBoxButtons.OK,

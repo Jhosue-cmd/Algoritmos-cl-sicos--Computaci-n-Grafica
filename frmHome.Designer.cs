@@ -39,6 +39,11 @@
             this.menuCircunferencia = new System.Windows.Forms.ToolStripMenuItem();
             this.menuBresenhamModificado = new System.Windows.Forms.ToolStripMenuItem();
             this.menuParametrico = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.menuRelleno = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuScanLineFill = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuFloodFill = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPatternFill = new System.Windows.Forms.ToolStripMenuItem();
             this.menuVentana = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCascada = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHorizontal = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +75,9 @@
             this.menuAlgoritmos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuLineas,
             this.toolStripSeparator1,
-            this.menuCirculos});
+            this.menuCirculos,
+            this.toolStripSeparator4,
+            this.menuRelleno});
             this.menuAlgoritmos.Name = "menuAlgoritmos";
             this.menuAlgoritmos.Size = new System.Drawing.Size(97, 24);
             this.menuAlgoritmos.Text = "&Algoritmos";
@@ -141,6 +148,42 @@
             this.menuParametrico.Size = new System.Drawing.Size(250, 26);
             this.menuParametrico.Text = "🟠 Paramétrico";
             this.menuParametrico.Click += new System.EventHandler(this.menuParametrico_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(221, 6);
+            // 
+            // menuRelleno
+            // 
+            this.menuRelleno.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuScanLineFill,
+            this.menuFloodFill,
+            this.menuPatternFill});
+            this.menuRelleno.Name = "menuRelleno";
+            this.menuRelleno.Size = new System.Drawing.Size(224, 26);
+            this.menuRelleno.Text = "🎨 Relleno";
+            // 
+            // menuScanLineFill
+            // 
+            this.menuScanLineFill.Name = "menuScanLineFill";
+            this.menuScanLineFill.Size = new System.Drawing.Size(250, 26);
+            this.menuScanLineFill.Text = "🔵 Scan-Line Fill";
+            this.menuScanLineFill.Click += new System.EventHandler(this.menuScanLineFill_Click);
+            // 
+            // menuFloodFill
+            // 
+            this.menuFloodFill.Name = "menuFloodFill";
+            this.menuFloodFill.Size = new System.Drawing.Size(250, 26);
+            this.menuFloodFill.Text = "🟢 Flood Fill";
+            this.menuFloodFill.Click += new System.EventHandler(this.menuFloodFill_Click);
+            // 
+            // menuPatternFill
+            // 
+            this.menuPatternFill.Name = "menuPatternFill";
+            this.menuPatternFill.Size = new System.Drawing.Size(250, 26);
+            this.menuPatternFill.Text = "🟣 Pattern Fill";
+            this.menuPatternFill.Click += new System.EventHandler(this.menuPatternFill_Click);
             // 
             // menuVentana
             // 
@@ -249,6 +292,11 @@
         private System.Windows.Forms.ToolStripMenuItem menuCircunferencia;
         private System.Windows.Forms.ToolStripMenuItem menuBresenhamModificado;
         private System.Windows.Forms.ToolStripMenuItem menuParametrico;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem menuRelleno;
+        private System.Windows.Forms.ToolStripMenuItem menuScanLineFill;
+        private System.Windows.Forms.ToolStripMenuItem menuFloodFill;
+        private System.Windows.Forms.ToolStripMenuItem menuPatternFill;
         private System.Windows.Forms.ToolStripMenuItem menuVentana;
         private System.Windows.Forms.ToolStripMenuItem menuCascada;
         private System.Windows.Forms.ToolStripMenuItem menuHorizontal;
