@@ -76,10 +76,13 @@
     <Compile Include="Circulos\view\frmCircuferenciacs.Designer.cs">
       <DependentUpon>frmCircuferenciacs.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCohenSutherland.cs">
+    <Compile Include="Recorte de Lineas\model\CCohenSutherland.cs" />
+    <Compile Include="Recorte de Lineas\model\CLiang-Barsky.cs" />
+    <Compile Include="Recorte de Lineas\model\CNicholl-Lee-Nicholl.cs" />
+    <Compile Include="Recorte de Lineas\view\frmCohenSutherland.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCohenSutherland.Designer.cs">
+    <Compile Include="Recorte de Lineas\view\frmCohenSutherland.Designer.cs">
       <DependentUpon>frmCohenSutherland.cs</DependentUpon>
     </Compile>
     <Compile Include="Lineas\view\frmDDA.cs">
@@ -108,6 +111,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recorte de Lineas\view\frmLiang-Barsky.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recorte de Lineas\view\frmLiang-Barsky.Designer.cs">
+      <DependentUpon>frmLiang-Barsky.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recorte de Lineas\view\frmNicholl-Lee-Nicholl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recorte de Lineas\view\frmNicholl-Lee-Nicholl.Designer.cs">
+      <DependentUpon>frmNicholl-Lee-Nicholl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Relleno\model\CFloodFillcs.cs" />
     <Compile Include="Relleno\model\CPatternFill.cs" />
     <Compile Include="Relleno\model\CScan-LineFill.cs" />

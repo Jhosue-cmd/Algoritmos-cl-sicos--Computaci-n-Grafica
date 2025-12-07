@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Algoritmo_de_lineas.Circulos.view;
 using Algoritmo_de_lineas.Relleno.view;
+using Algoritmo_de_lineas.Recorte_de_Lineas.view;
 
 namespace Algoritmo_de_lineas
 {
@@ -85,6 +86,22 @@ namespace Algoritmo_de_lineas
             AbrirFormularioHijo(new frmPatternFill());
         }
 
+        // Eventos del menú - Algoritmos de Recorte de Líneas
+        private void menuCohenSutherland_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new frmCohenSutherland());
+        }
+
+        private void menuLiangBarsky_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new frmLiangBarsky());
+        }
+
+        private void menuNichollLeeNicholl_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new frmNichollLeeNicholl());
+        }
+
         // Eventos del menú - Ventana
         private void menuCascada_Click(object sender, EventArgs e)
         {
@@ -141,10 +158,13 @@ namespace Algoritmo_de_lineas
                 "• Scan-Line Fill (escaneo por líneas)\n" +
                 "• Flood Fill (relleno por semilla)\n" +
                 "• Pattern Fill (relleno con patrones)\n\n" +
+                "━━━ RECORTE DE LÍNEAS ━━━\n" +
+                "• Cohen-Sutherland (códigos de región)\n" +
+                "• Liang-Barsky (paramétrico)\n" +
+                "• Nicholl-Lee-Nicholl (optimizado)\n\n" +
                 "━━━ INFORMACIÓN ━━━\n" +
-                "Desarrollado por: [Tu Nombre]\n" +
-                "Código de Estudiante: [Tu Código]\n" +
-                "Curso: Computación Gráfica\n" +
+                "Desarrollado para: Computación Gráfica\n" +
+                "Framework: .NET Framework 4.8\n" +
                 "Año: 2025",
                 "Acerca de - Algoritmos Gráficos",
                 MessageBoxButtons.OK,

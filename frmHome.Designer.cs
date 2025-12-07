@@ -44,6 +44,11 @@
             this.menuScanLineFill = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFloodFill = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPatternFill = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.menuRecorte = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCohenSutherland = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuLiangBarsky = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuNichollLeeNicholl = new System.Windows.Forms.ToolStripMenuItem();
             this.menuVentana = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCascada = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHorizontal = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,7 +82,9 @@
             this.toolStripSeparator1,
             this.menuCirculos,
             this.toolStripSeparator4,
-            this.menuRelleno});
+            this.menuRelleno,
+            this.toolStripSeparator5,
+            this.menuRecorte});
             this.menuAlgoritmos.Name = "menuAlgoritmos";
             this.menuAlgoritmos.Size = new System.Drawing.Size(97, 24);
             this.menuAlgoritmos.Text = "&Algoritmos";
@@ -184,6 +191,42 @@
             this.menuPatternFill.Size = new System.Drawing.Size(250, 26);
             this.menuPatternFill.Text = "🟣 Pattern Fill";
             this.menuPatternFill.Click += new System.EventHandler(this.menuPatternFill_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(221, 6);
+            // 
+            // menuRecorte
+            // 
+            this.menuRecorte.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuCohenSutherland,
+            this.menuLiangBarsky,
+            this.menuNichollLeeNicholl});
+            this.menuRecorte.Name = "menuRecorte";
+            this.menuRecorte.Size = new System.Drawing.Size(224, 26);
+            this.menuRecorte.Text = "✂️ Recorte de Líneas";
+            // 
+            // menuCohenSutherland
+            // 
+            this.menuCohenSutherland.Name = "menuCohenSutherland";
+            this.menuCohenSutherland.Size = new System.Drawing.Size(250, 26);
+            this.menuCohenSutherland.Text = "🔵 Cohen-Sutherland";
+            this.menuCohenSutherland.Click += new System.EventHandler(this.menuCohenSutherland_Click);
+            // 
+            // menuLiangBarsky
+            // 
+            this.menuLiangBarsky.Name = "menuLiangBarsky";
+            this.menuLiangBarsky.Size = new System.Drawing.Size(250, 26);
+            this.menuLiangBarsky.Text = "🟢 Liang-Barsky";
+            this.menuLiangBarsky.Click += new System.EventHandler(this.menuLiangBarsky_Click);
+            // 
+            // menuNichollLeeNicholl
+            // 
+            this.menuNichollLeeNicholl.Name = "menuNichollLeeNicholl";
+            this.menuNichollLeeNicholl.Size = new System.Drawing.Size(250, 26);
+            this.menuNichollLeeNicholl.Text = "🟣 Nicholl-Lee-Nicholl";
+            this.menuNichollLeeNicholl.Click += new System.EventHandler(this.menuNichollLeeNicholl_Click);
             // 
             // menuVentana
             // 
@@ -297,6 +340,11 @@
         private System.Windows.Forms.ToolStripMenuItem menuScanLineFill;
         private System.Windows.Forms.ToolStripMenuItem menuFloodFill;
         private System.Windows.Forms.ToolStripMenuItem menuPatternFill;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem menuRecorte;
+        private System.Windows.Forms.ToolStripMenuItem menuCohenSutherland;
+        private System.Windows.Forms.ToolStripMenuItem menuLiangBarsky;
+        private System.Windows.Forms.ToolStripMenuItem menuNichollLeeNicholl;
         private System.Windows.Forms.ToolStripMenuItem menuVentana;
         private System.Windows.Forms.ToolStripMenuItem menuCascada;
         private System.Windows.Forms.ToolStripMenuItem menuHorizontal;
