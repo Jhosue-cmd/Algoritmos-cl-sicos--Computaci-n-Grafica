@@ -49,6 +49,11 @@
             this.menuCohenSutherland = new System.Windows.Forms.ToolStripMenuItem();
             this.menuLiangBarsky = new System.Windows.Forms.ToolStripMenuItem();
             this.menuNichollLeeNicholl = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.menuRecortePoligonos = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSutherlandHodgman = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuWeilerAtherton = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuVatti = new System.Windows.Forms.ToolStripMenuItem();
             this.menuVentana = new System.Windows.Forms.ToolStripMenuItem();
             this.menuCascada = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHorizontal = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,7 +89,9 @@
             this.toolStripSeparator4,
             this.menuRelleno,
             this.toolStripSeparator5,
-            this.menuRecorte});
+            this.menuRecorte,
+            this.toolStripSeparator6,
+            this.menuRecortePoligonos});
             this.menuAlgoritmos.Name = "menuAlgoritmos";
             this.menuAlgoritmos.Size = new System.Drawing.Size(97, 24);
             this.menuAlgoritmos.Text = "&Algoritmos";
@@ -96,34 +103,34 @@
             this.menuBresenham,
             this.menuXiaolin});
             this.menuLineas.Name = "menuLineas";
-            this.menuLineas.Size = new System.Drawing.Size(224, 26);
+            this.menuLineas.Size = new System.Drawing.Size(230, 26);
             this.menuLineas.Text = "📏 Líneas";
             // 
             // menuDDA
             // 
             this.menuDDA.Name = "menuDDA";
-            this.menuDDA.Size = new System.Drawing.Size(224, 26);
+            this.menuDDA.Size = new System.Drawing.Size(190, 26);
             this.menuDDA.Text = "🔵 DDA";
             this.menuDDA.Click += new System.EventHandler(this.menuDDA_Click);
             // 
             // menuBresenham
             // 
             this.menuBresenham.Name = "menuBresenham";
-            this.menuBresenham.Size = new System.Drawing.Size(224, 26);
+            this.menuBresenham.Size = new System.Drawing.Size(190, 26);
             this.menuBresenham.Text = "🟢 Bresenham";
             this.menuBresenham.Click += new System.EventHandler(this.menuBresenham_Click);
             // 
             // menuXiaolin
             // 
             this.menuXiaolin.Name = "menuXiaolin";
-            this.menuXiaolin.Size = new System.Drawing.Size(224, 26);
+            this.menuXiaolin.Size = new System.Drawing.Size(190, 26);
             this.menuXiaolin.Text = "🟣 Xiaolin Wu";
             this.menuXiaolin.Click += new System.EventHandler(this.menuXiaolin_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(227, 6);
             // 
             // menuCirculos
             // 
@@ -132,7 +139,7 @@
             this.menuBresenhamModificado,
             this.menuParametrico});
             this.menuCirculos.Name = "menuCirculos";
-            this.menuCirculos.Size = new System.Drawing.Size(224, 26);
+            this.menuCirculos.Size = new System.Drawing.Size(230, 26);
             this.menuCirculos.Text = "⭕ Círculos";
             // 
             // menuCircunferencia
@@ -159,7 +166,7 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(227, 6);
             // 
             // menuRelleno
             // 
@@ -168,34 +175,34 @@
             this.menuFloodFill,
             this.menuPatternFill});
             this.menuRelleno.Name = "menuRelleno";
-            this.menuRelleno.Size = new System.Drawing.Size(224, 26);
+            this.menuRelleno.Size = new System.Drawing.Size(230, 26);
             this.menuRelleno.Text = "🎨 Relleno";
             // 
             // menuScanLineFill
             // 
             this.menuScanLineFill.Name = "menuScanLineFill";
-            this.menuScanLineFill.Size = new System.Drawing.Size(250, 26);
+            this.menuScanLineFill.Size = new System.Drawing.Size(190, 26);
             this.menuScanLineFill.Text = "🔵 Scan-Line Fill";
             this.menuScanLineFill.Click += new System.EventHandler(this.menuScanLineFill_Click);
             // 
             // menuFloodFill
             // 
             this.menuFloodFill.Name = "menuFloodFill";
-            this.menuFloodFill.Size = new System.Drawing.Size(250, 26);
+            this.menuFloodFill.Size = new System.Drawing.Size(190, 26);
             this.menuFloodFill.Text = "🟢 Flood Fill";
             this.menuFloodFill.Click += new System.EventHandler(this.menuFloodFill_Click);
             // 
             // menuPatternFill
             // 
             this.menuPatternFill.Name = "menuPatternFill";
-            this.menuPatternFill.Size = new System.Drawing.Size(250, 26);
+            this.menuPatternFill.Size = new System.Drawing.Size(190, 26);
             this.menuPatternFill.Text = "🟣 Pattern Fill";
             this.menuPatternFill.Click += new System.EventHandler(this.menuPatternFill_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(227, 6);
             // 
             // menuRecorte
             // 
@@ -204,29 +211,65 @@
             this.menuLiangBarsky,
             this.menuNichollLeeNicholl});
             this.menuRecorte.Name = "menuRecorte";
-            this.menuRecorte.Size = new System.Drawing.Size(224, 26);
+            this.menuRecorte.Size = new System.Drawing.Size(230, 26);
             this.menuRecorte.Text = "✂️ Recorte de Líneas";
             // 
             // menuCohenSutherland
             // 
             this.menuCohenSutherland.Name = "menuCohenSutherland";
-            this.menuCohenSutherland.Size = new System.Drawing.Size(250, 26);
+            this.menuCohenSutherland.Size = new System.Drawing.Size(230, 26);
             this.menuCohenSutherland.Text = "🔵 Cohen-Sutherland";
             this.menuCohenSutherland.Click += new System.EventHandler(this.menuCohenSutherland_Click);
             // 
             // menuLiangBarsky
             // 
             this.menuLiangBarsky.Name = "menuLiangBarsky";
-            this.menuLiangBarsky.Size = new System.Drawing.Size(250, 26);
+            this.menuLiangBarsky.Size = new System.Drawing.Size(230, 26);
             this.menuLiangBarsky.Text = "🟢 Liang-Barsky";
             this.menuLiangBarsky.Click += new System.EventHandler(this.menuLiangBarsky_Click);
             // 
             // menuNichollLeeNicholl
             // 
             this.menuNichollLeeNicholl.Name = "menuNichollLeeNicholl";
-            this.menuNichollLeeNicholl.Size = new System.Drawing.Size(250, 26);
+            this.menuNichollLeeNicholl.Size = new System.Drawing.Size(230, 26);
             this.menuNichollLeeNicholl.Text = "🟣 Nicholl-Lee-Nicholl";
             this.menuNichollLeeNicholl.Click += new System.EventHandler(this.menuNichollLeeNicholl_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(227, 6);
+            // 
+            // menuRecortePoligonos
+            // 
+            this.menuRecortePoligonos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuSutherlandHodgman,
+            this.menuWeilerAtherton,
+            this.menuVatti});
+            this.menuRecortePoligonos.Name = "menuRecortePoligonos";
+            this.menuRecortePoligonos.Size = new System.Drawing.Size(230, 26);
+            this.menuRecortePoligonos.Text = "🔷 Recorte de Polígonos";
+            // 
+            // menuSutherlandHodgman
+            // 
+            this.menuSutherlandHodgman.Name = "menuSutherlandHodgman";
+            this.menuSutherlandHodgman.Size = new System.Drawing.Size(230, 26);
+            this.menuSutherlandHodgman.Text = "🔵 Sutherland-Hodgman";
+            this.menuSutherlandHodgman.Click += new System.EventHandler(this.menuSutherlandHodgman_Click);
+            // 
+            // menuWeilerAtherton
+            // 
+            this.menuWeilerAtherton.Name = "menuWeilerAtherton";
+            this.menuWeilerAtherton.Size = new System.Drawing.Size(230, 26);
+            this.menuWeilerAtherton.Text = "🟢 Weiler-Atherton";
+            this.menuWeilerAtherton.Click += new System.EventHandler(this.menuWeilerAtherton_Click);
+            // 
+            // menuVatti
+            // 
+            this.menuVatti.Name = "menuVatti";
+            this.menuVatti.Size = new System.Drawing.Size(230, 26);
+            this.menuVatti.Text = "🟣 Vatti";
+            this.menuVatti.Click += new System.EventHandler(this.menuVatti_Click);
             // 
             // menuVentana
             // 
@@ -345,6 +388,11 @@
         private System.Windows.Forms.ToolStripMenuItem menuCohenSutherland;
         private System.Windows.Forms.ToolStripMenuItem menuLiangBarsky;
         private System.Windows.Forms.ToolStripMenuItem menuNichollLeeNicholl;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem menuRecortePoligonos;
+        private System.Windows.Forms.ToolStripMenuItem menuSutherlandHodgman;
+        private System.Windows.Forms.ToolStripMenuItem menuWeilerAtherton;
+        private System.Windows.Forms.ToolStripMenuItem menuVatti;
         private System.Windows.Forms.ToolStripMenuItem menuVentana;
         private System.Windows.Forms.ToolStripMenuItem menuCascada;
         private System.Windows.Forms.ToolStripMenuItem menuHorizontal;

@@ -97,10 +97,19 @@
     <Compile Include="frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSutherlandHodgman.cs">
+    <Compile Include="Recorte de poligonos\model\CPolígonosVatti.cs" />
+    <Compile Include="Recorte de poligonos\model\CSutherlandHodgman.cs" />
+    <Compile Include="Recorte de poligonos\model\CWeiler-Atherton.cs" />
+    <Compile Include="Recorte de poligonos\view\frmPolígonosVatti.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSutherlandHodgman.Designer.cs">
+    <Compile Include="Recorte de poligonos\view\frmPolígonosVatti.Designer.cs">
+      <DependentUpon>frmPolígonosVatti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recorte de poligonos\view\frmSutherlandHodgman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recorte de poligonos\view\frmSutherlandHodgman.Designer.cs">
       <DependentUpon>frmSutherlandHodgman.cs</DependentUpon>
     </Compile>
     <Compile Include="Lineas\view\frmXiaolin.cs">
@@ -122,6 +131,12 @@
     </Compile>
     <Compile Include="Recorte de Lineas\view\frmNicholl-Lee-Nicholl.Designer.cs">
       <DependentUpon>frmNicholl-Lee-Nicholl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recorte de poligonos\view\frmWeiler-Atherton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recorte de poligonos\view\frmWeiler-Atherton.Designer.cs">
+      <DependentUpon>frmWeiler-Atherton.cs</DependentUpon>
     </Compile>
     <Compile Include="Relleno\model\CFloodFillcs.cs" />
     <Compile Include="Relleno\model\CPatternFill.cs" />

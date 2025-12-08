@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using Algoritmo_de_lineas.Circulos.view;
 using Algoritmo_de_lineas.Relleno.view;
 using Algoritmo_de_lineas.Recorte_de_Lineas.view;
+using Algoritmo_de_lineas.Recorte_de_poligonos.view;
 
 namespace Algoritmo_de_lineas
 {
@@ -22,7 +23,6 @@ namespace Algoritmo_de_lineas
         // Métodos para abrir formularios hijos MDI
         private void AbrirFormularioHijo(Form hijo)
         {
-            // Cerrar cualquier formulario hijo abierto del mismo tipo
             foreach (Form frm in this.MdiChildren)
             {
                 if (frm.GetType() == hijo.GetType())
@@ -31,8 +31,6 @@ namespace Algoritmo_de_lineas
                     return;
                 }
             }
-
-            // Configurar como hijo MDI
             hijo.MdiParent = this;
             hijo.WindowState = FormWindowState.Maximized;
             hijo.Show();
@@ -102,6 +100,22 @@ namespace Algoritmo_de_lineas
             AbrirFormularioHijo(new frmNichollLeeNicholl());
         }
 
+        // Eventos del menú - Algoritmos de Recorte de Polígonos
+        private void menuSutherlandHodgman_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new frmSutherlandHodgman());
+        }
+
+        private void menuWeilerAtherton_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new frmWeilerAtherton());
+        }
+
+        private void menuVatti_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(new frmVatti());
+        }
+
         // Eventos del menú - Ventana
         private void menuCascada_Click(object sender, EventArgs e)
         {
@@ -162,10 +176,13 @@ namespace Algoritmo_de_lineas
                 "• Cohen-Sutherland (códigos de región)\n" +
                 "• Liang-Barsky (paramétrico)\n" +
                 "• Nicholl-Lee-Nicholl (optimizado)\n\n" +
+                "━━━ RECORTE DE POLÍGONOS ━━━\n" +
+                "• Sutherland-Hodgman\n" +
+                "• Weiler-Atherton\n" +
+                "• Vatti (operaciones booleanas)\n\n" +
                 "━━━ INFORMACIÓN ━━━\n" +
-                "Desarrollado para: Computación Gráfica\n" +
                 "Framework: .NET Framework 4.8\n" +
-                "Año: 2025",
+                "Curso: Computación Gráfica - 2025",
                 "Acerca de - Algoritmos Gráficos",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
