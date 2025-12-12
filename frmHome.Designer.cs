@@ -103,34 +103,34 @@
             this.menuBresenham,
             this.menuXiaolin});
             this.menuLineas.Name = "menuLineas";
-            this.menuLineas.Size = new System.Drawing.Size(230, 26);
-            this.menuLineas.Text = "📏 Líneas";
+            this.menuLineas.Size = new System.Drawing.Size(237, 26);
+            this.menuLineas.Text = " Líneas";
             // 
             // menuDDA
             // 
             this.menuDDA.Name = "menuDDA";
-            this.menuDDA.Size = new System.Drawing.Size(190, 26);
-            this.menuDDA.Text = "🔵 DDA";
+            this.menuDDA.Size = new System.Drawing.Size(224, 26);
+            this.menuDDA.Text = " DDA";
             this.menuDDA.Click += new System.EventHandler(this.menuDDA_Click);
             // 
             // menuBresenham
             // 
             this.menuBresenham.Name = "menuBresenham";
-            this.menuBresenham.Size = new System.Drawing.Size(190, 26);
-            this.menuBresenham.Text = "🟢 Bresenham";
+            this.menuBresenham.Size = new System.Drawing.Size(224, 26);
+            this.menuBresenham.Text = " Bresenham";
             this.menuBresenham.Click += new System.EventHandler(this.menuBresenham_Click);
             // 
             // menuXiaolin
             // 
             this.menuXiaolin.Name = "menuXiaolin";
-            this.menuXiaolin.Size = new System.Drawing.Size(190, 26);
-            this.menuXiaolin.Text = "🟣 Xiaolin Wu";
+            this.menuXiaolin.Size = new System.Drawing.Size(224, 26);
+            this.menuXiaolin.Text = " Xiaolin Wu";
             this.menuXiaolin.Click += new System.EventHandler(this.menuXiaolin_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(227, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(234, 6);
             // 
             // menuCirculos
             // 
@@ -139,34 +139,34 @@
             this.menuBresenhamModificado,
             this.menuParametrico});
             this.menuCirculos.Name = "menuCirculos";
-            this.menuCirculos.Size = new System.Drawing.Size(230, 26);
-            this.menuCirculos.Text = "⭕ Círculos";
+            this.menuCirculos.Size = new System.Drawing.Size(237, 26);
+            this.menuCirculos.Text = " Círculos";
             // 
             // menuCircunferencia
             // 
             this.menuCircunferencia.Name = "menuCircunferencia";
             this.menuCircunferencia.Size = new System.Drawing.Size(250, 26);
-            this.menuCircunferencia.Text = "🔵 Punto Medio";
+            this.menuCircunferencia.Text = " Punto Medio";
             this.menuCircunferencia.Click += new System.EventHandler(this.menuCircunferencia_Click);
             // 
             // menuBresenhamModificado
             // 
             this.menuBresenhamModificado.Name = "menuBresenhamModificado";
             this.menuBresenhamModificado.Size = new System.Drawing.Size(250, 26);
-            this.menuBresenhamModificado.Text = "🟢 Bresenham Modificado";
+            this.menuBresenhamModificado.Text = " Bresenham Modificado";
             this.menuBresenhamModificado.Click += new System.EventHandler(this.menuBresenhamModificado_Click);
             // 
             // menuParametrico
             // 
             this.menuParametrico.Name = "menuParametrico";
             this.menuParametrico.Size = new System.Drawing.Size(250, 26);
-            this.menuParametrico.Text = "🟠 Paramétrico";
+            this.menuParametrico.Text = "Paramétrico";
             this.menuParametrico.Click += new System.EventHandler(this.menuParametrico_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(227, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(234, 6);
             // 
             // menuRelleno
             // 
@@ -175,34 +175,34 @@
             this.menuFloodFill,
             this.menuPatternFill});
             this.menuRelleno.Name = "menuRelleno";
-            this.menuRelleno.Size = new System.Drawing.Size(230, 26);
-            this.menuRelleno.Text = "🎨 Relleno";
+            this.menuRelleno.Size = new System.Drawing.Size(237, 26);
+            this.menuRelleno.Text = "Relleno";
             // 
             // menuScanLineFill
             // 
             this.menuScanLineFill.Name = "menuScanLineFill";
-            this.menuScanLineFill.Size = new System.Drawing.Size(190, 26);
-            this.menuScanLineFill.Text = "🔵 Scan-Line Fill";
+            this.menuScanLineFill.Size = new System.Drawing.Size(224, 26);
+            this.menuScanLineFill.Text = " Scan-Line Fill";
             this.menuScanLineFill.Click += new System.EventHandler(this.menuScanLineFill_Click);
             // 
             // menuFloodFill
             // 
             this.menuFloodFill.Name = "menuFloodFill";
-            this.menuFloodFill.Size = new System.Drawing.Size(190, 26);
-            this.menuFloodFill.Text = "🟢 Flood Fill";
+            this.menuFloodFill.Size = new System.Drawing.Size(224, 26);
+            this.menuFloodFill.Text = " Flood Fill";
             this.menuFloodFill.Click += new System.EventHandler(this.menuFloodFill_Click);
             // 
             // menuPatternFill
             // 
             this.menuPatternFill.Name = "menuPatternFill";
-            this.menuPatternFill.Size = new System.Drawing.Size(190, 26);
-            this.menuPatternFill.Text = "🟣 Pattern Fill";
+            this.menuPatternFill.Size = new System.Drawing.Size(224, 26);
+            this.menuPatternFill.Text = " Pattern Fill";
             this.menuPatternFill.Click += new System.EventHandler(this.menuPatternFill_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(227, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(234, 6);
             // 
             // menuRecorte
             // 
@@ -211,34 +211,34 @@
             this.menuLiangBarsky,
             this.menuNichollLeeNicholl});
             this.menuRecorte.Name = "menuRecorte";
-            this.menuRecorte.Size = new System.Drawing.Size(230, 26);
-            this.menuRecorte.Text = "✂️ Recorte de Líneas";
+            this.menuRecorte.Size = new System.Drawing.Size(237, 26);
+            this.menuRecorte.Text = " Recorte de Líneas";
             // 
             // menuCohenSutherland
             // 
             this.menuCohenSutherland.Name = "menuCohenSutherland";
-            this.menuCohenSutherland.Size = new System.Drawing.Size(230, 26);
-            this.menuCohenSutherland.Text = "🔵 Cohen-Sutherland";
+            this.menuCohenSutherland.Size = new System.Drawing.Size(225, 26);
+            this.menuCohenSutherland.Text = " Cohen-Sutherland";
             this.menuCohenSutherland.Click += new System.EventHandler(this.menuCohenSutherland_Click);
             // 
             // menuLiangBarsky
             // 
             this.menuLiangBarsky.Name = "menuLiangBarsky";
-            this.menuLiangBarsky.Size = new System.Drawing.Size(230, 26);
-            this.menuLiangBarsky.Text = "🟢 Liang-Barsky";
+            this.menuLiangBarsky.Size = new System.Drawing.Size(225, 26);
+            this.menuLiangBarsky.Text = " Liang-Barsky";
             this.menuLiangBarsky.Click += new System.EventHandler(this.menuLiangBarsky_Click);
             // 
             // menuNichollLeeNicholl
             // 
             this.menuNichollLeeNicholl.Name = "menuNichollLeeNicholl";
-            this.menuNichollLeeNicholl.Size = new System.Drawing.Size(230, 26);
-            this.menuNichollLeeNicholl.Text = "🟣 Nicholl-Lee-Nicholl";
+            this.menuNichollLeeNicholl.Size = new System.Drawing.Size(225, 26);
+            this.menuNichollLeeNicholl.Text = " Nicholl-Lee-Nicholl";
             this.menuNichollLeeNicholl.Click += new System.EventHandler(this.menuNichollLeeNicholl_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(227, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(234, 6);
             // 
             // menuRecortePoligonos
             // 
@@ -247,28 +247,28 @@
             this.menuWeilerAtherton,
             this.menuVatti});
             this.menuRecortePoligonos.Name = "menuRecortePoligonos";
-            this.menuRecortePoligonos.Size = new System.Drawing.Size(230, 26);
-            this.menuRecortePoligonos.Text = "🔷 Recorte de Polígonos";
+            this.menuRecortePoligonos.Size = new System.Drawing.Size(237, 26);
+            this.menuRecortePoligonos.Text = " Recorte de Polígonos";
             // 
             // menuSutherlandHodgman
             // 
             this.menuSutherlandHodgman.Name = "menuSutherlandHodgman";
-            this.menuSutherlandHodgman.Size = new System.Drawing.Size(230, 26);
-            this.menuSutherlandHodgman.Text = "🔵 Sutherland-Hodgman";
+            this.menuSutherlandHodgman.Size = new System.Drawing.Size(240, 26);
+            this.menuSutherlandHodgman.Text = " Sutherland-Hodgman";
             this.menuSutherlandHodgman.Click += new System.EventHandler(this.menuSutherlandHodgman_Click);
             // 
             // menuWeilerAtherton
             // 
             this.menuWeilerAtherton.Name = "menuWeilerAtherton";
-            this.menuWeilerAtherton.Size = new System.Drawing.Size(230, 26);
-            this.menuWeilerAtherton.Text = "🟢 Weiler-Atherton";
+            this.menuWeilerAtherton.Size = new System.Drawing.Size(240, 26);
+            this.menuWeilerAtherton.Text = "Weiler-Atherton";
             this.menuWeilerAtherton.Click += new System.EventHandler(this.menuWeilerAtherton_Click);
             // 
             // menuVatti
             // 
             this.menuVatti.Name = "menuVatti";
-            this.menuVatti.Size = new System.Drawing.Size(230, 26);
-            this.menuVatti.Text = "🟣 Vatti";
+            this.menuVatti.Size = new System.Drawing.Size(240, 26);
+            this.menuVatti.Text = " Vatti";
             this.menuVatti.Click += new System.EventHandler(this.menuVatti_Click);
             // 
             // menuVentana

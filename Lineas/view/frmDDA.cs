@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -9,18 +10,32 @@ namespace Algoritmo_de_lineas
         private CDDA algoritmo;
         private Bitmap bmp;
         private Graphics g;
-        private const int ESCALA = 10; // Factor de escala para ampliar el dibujo
+        private const int ESCALA = 10;
+
+        // Variables para simulación
+        private List<Point> puntosLinea;
+        private int pasoActual;
+        private bool enSimulacion;
+        private Timer timerSimulacion;
+        private int x1Sim, y1Sim, x2Sim, y2Sim;
+        private int px1, py1, px2, py2;
 
         public frmDDA()
         {
             InitializeComponent();
             algoritmo = new CDDA();
+            puntosLinea = new List<Point>();
+            
+            // Configurar timer para simulación
+            timerSimulacion = new Timer();
+            timerSimulacion.Interval = 500; // 500ms entre pasos
+            timerSimulacion.Tick += TimerSimulacion_Tick;
         }
 
         private void frmDDA_Load(object sender, EventArgs e)
         {
-            // Inicializar el bitmap y graphics para el PictureBox
             InicializarLienzo();
+            ActualizarEstadoBotones(false);
         }
 
         private void InicializarLienzo()
@@ -28,11 +43,8 @@ namespace Algoritmo_de_lineas
             bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             g = Graphics.FromImage(bmp);
             g.Clear(Color.White);
-            
-            // Dibujar ejes de coordenadas y cuadrícula
             DibujarCuadricula();
             DibujarEjes();
-            
             pictureBox1.Image = bmp;
         }
 
@@ -43,222 +55,248 @@ namespace Algoritmo_de_lineas
                 int centroX = pictureBox1.Width / 2;
                 int centroY = pictureBox1.Height / 2;
                 
-                // Líneas verticales
                 for (int i = -centroX; i <= centroX; i += ESCALA)
-                {
                     g.DrawLine(penCuadricula, centroX + i, 0, centroX + i, pictureBox1.Height);
-                }
                 
-                // Líneas horizontales
                 for (int i = -centroY; i <= centroY; i += ESCALA)
-                {
                     g.DrawLine(penCuadricula, 0, centroY + i, pictureBox1.Width, centroY + i);
-                }
             }
         }
 
         private void DibujarEjes()
         {
             using (Pen penEje = new Pen(Color.Gray, 2))
-            using (Pen penMarcas = new Pen(Color.Gray, 1))
             using (Font font = new Font("Arial", 7))
             using (Brush brush = new SolidBrush(Color.Black))
             {
                 int centroX = pictureBox1.Width / 2;
                 int centroY = pictureBox1.Height / 2;
                 
-                // Eje X
                 g.DrawLine(penEje, 0, centroY, pictureBox1.Width, centroY);
-                // Eje Y
                 g.DrawLine(penEje, centroX, 0, centroX, pictureBox1.Height);
                 
-                // Marcas en el eje X (cada 5 unidades)
-                for (int i = -20; i <= 20; i++)
-                {
-                    if (i == 0) continue;
-                    int x = centroX + (i * ESCALA * 5);
-                    if (x >= 0 && x <= pictureBox1.Width)
-                    {
-                        g.DrawLine(penMarcas, x, centroY - 3, x, centroY + 3);
-                        if (i % 2 == 0) // Mostrar número cada 10 unidades
-                        {
-                            string texto = (i * 5).ToString();
-                            SizeF size = g.MeasureString(texto, font);
-                            g.DrawString(texto, font, brush, x - size.Width / 2, centroY + 5);
-                        }
-                    }
-                }
-                
-                // Marcas en el eje Y (cada 5 unidades)
-                for (int i = -20; i <= 20; i++)
-                {
-                    if (i == 0) continue;
-                    int y = centroY - (i * ESCALA * 5);
-                    if (y >= 0 && y <= pictureBox1.Height)
-                    {
-                        g.DrawLine(penMarcas, centroX - 3, y, centroX + 3, y);
-                        if (i % 2 == 0) // Mostrar número cada 10 unidades
-                        {
-                            string texto = (i * 5).ToString();
-                            g.DrawString(texto, font, brush, centroX + 5, y - 7);
-                        }
-                    }
-                }
-                
-                // Etiquetas de ejes
                 g.DrawString("X", new Font("Arial", 9, FontStyle.Bold), brush, pictureBox1.Width - 15, centroY + 5);
                 g.DrawString("Y", new Font("Arial", 9, FontStyle.Bold), brush, centroX + 5, 5);
                 g.DrawString("(0,0)", font, brush, centroX + 3, centroY + 3);
             }
         }
 
+        private void ActualizarEstadoBotones(bool simulando)
+        {
+            enSimulacion = simulando;
+            btnDibujar.Enabled = !simulando;
+            btnSimular.Enabled = !simulando;
+            btnPaso.Enabled = simulando;
+            btnDetener.Enabled = simulando;
+            txtX1.Enabled = !simulando;
+            txtY1.Enabled = !simulando;
+            txtX2.Enabled = !simulando;
+            txtY2.Enabled = !simulando;
+        }
+
+        private bool ValidarEntradas(out int x1, out int y1, out int x2, out int y2)
+        {
+            x1 = y1 = x2 = y2 = 0;
+
+            if (string.IsNullOrWhiteSpace(txtX1.Text) || string.IsNullOrWhiteSpace(txtY1.Text) ||
+                string.IsNullOrWhiteSpace(txtX2.Text) || string.IsNullOrWhiteSpace(txtY2.Text))
+            {
+                MessageBox.Show("Por favor, ingrese todos los valores.", "Datos incompletos", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!int.TryParse(txtX1.Text, out x1) || !int.TryParse(txtY1.Text, out y1) ||
+                !int.TryParse(txtX2.Text, out x2) || !int.TryParse(txtY2.Text, out y2))
+            {
+                MessageBox.Show("Ingrese solo numeros enteros.", "Datos invalidos", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // Validar rango de -15 a 15
+            if (x1 < -15 || x1 > 15 || y1 < -15 || y1 > 15 ||
+                x2 < -15 || x2 > 15 || y2 < -15 || y2 > 15)
+            {
+                MessageBox.Show("Los valores deben estar entre -15 y 15.", 
+                    "Fuera de rango", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (x1 == x2 && y1 == y2)
+            {
+                MessageBox.Show("Los puntos no pueden ser iguales.", "Puntos iguales", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
         private void btnDibujar_Click(object sender, EventArgs e)
         {
-            try
+            if (!ValidarEntradas(out int x1, out int y1, out int x2, out int y2))
+                return;
+
+            g.Clear(Color.White);
+            DibujarCuadricula();
+            DibujarEjes();
+
+            int centroX = pictureBox1.Width / 2;
+            int centroY = pictureBox1.Height / 2;
+
+            px1 = centroX + (x1 * ESCALA);
+            py1 = centroY - (y1 * ESCALA);
+            px2 = centroX + (x2 * ESCALA);
+            py2 = centroY - (y2 * ESCALA);
+
+            algoritmo.DibujarLinea(g, px1, py1, px2, py2, Color.Blue, 3);
+
+            double pendiente = algoritmo.CalcularPendiente(x1, y1, x2, y2);
+            txtResultado.Text = $"═══ RESULTADO DDA ═══\r\n\r\n" +
+                $"Punto inicial: ({x1}, {y1})\r\n" +
+                $"Punto final: ({x2}, {y2})\r\n" +
+                $"Pendiente: {(double.IsInfinity(pendiente) ? "∞" : pendiente.ToString("F3"))}\r\n" +
+                $"Distancia: {Math.Sqrt(Math.Pow(x2-x1, 2) + Math.Pow(y2-y1, 2)):F2}";
+
+
+            // Enfocar en el TextBox de resultados
+            txtResultado.Focus();
+
+            pictureBox1.Refresh();
+        }
+
+        private void btnSimular_Click(object sender, EventArgs e)
+        {
+            if (!ValidarEntradas(out x1Sim, out y1Sim, out x2Sim, out y2Sim))
+                return;
+
+            // Preparar simulación
+            g.Clear(Color.White);
+            DibujarCuadricula();
+            DibujarEjes();
+
+            int centroX = pictureBox1.Width / 2;
+            int centroY = pictureBox1.Height / 2;
+
+            px1 = centroX + (x1Sim * ESCALA);
+            py1 = centroY - (y1Sim * ESCALA);
+            px2 = centroX + (x2Sim * ESCALA);
+            py2 = centroY - (y2Sim * ESCALA);
+
+            // Calcular línea con pasos
+            puntosLinea = algoritmo.CalcularLineaConPasos(px1, py1, px2, py2);
+            pasoActual = 0;
+
+            // Dibujar puntos inicial y final
+            using (Brush brushInicio = new SolidBrush(Color.Green))
+            using (Brush brushFin = new SolidBrush(Color.Red))
             {
-                // Validar que todos los campos estén llenos
-                if (string.IsNullOrWhiteSpace(txtX1.Text) || 
-                    string.IsNullOrWhiteSpace(txtY1.Text) ||
-                    string.IsNullOrWhiteSpace(txtX2.Text) || 
-                    string.IsNullOrWhiteSpace(txtY2.Text))
-                {
-                    MessageBox.Show("Por favor, ingrese todos los valores de los puntos.", 
-                        "Datos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                // Validar que sean números enteros
-                if (!int.TryParse(txtX1.Text, out int x1) || 
-                    !int.TryParse(txtY1.Text, out int y1) ||
-                    !int.TryParse(txtX2.Text, out int x2) || 
-                    !int.TryParse(txtY2.Text, out int y2))
-                {
-                    MessageBox.Show("Por favor, ingrese solo números enteros.", 
-                        "Datos inválidos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                // Validar que sean números positivos
-                if (x1 < 0 || y1 < 0 || x2 < 0 || y2 < 0)
-                {
-                    MessageBox.Show("Por favor, ingrese solo números enteros positivos.", 
-                        "Valores negativos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                // Validar que los puntos no sean iguales
-                if (x1 == x2 && y1 == y2)
-                {
-                    MessageBox.Show("Los puntos inicial y final no pueden ser iguales.", 
-                        "Puntos iguales", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                // Validar que la pendiente no sea cero (línea no horizontal)
-                if (!algoritmo.ValidarPendiente(x1, y1, x2, y2))
-                {
-                    MessageBox.Show("La pendiente no puede ser cero.\nLa línea no puede ser horizontal (Y1 debe ser diferente de Y2).", 
-                        "Pendiente inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                // Limpiar el lienzo
-                g.Clear(Color.White);
-                DibujarCuadricula();
-                DibujarEjes();
-
-                // Convertir coordenadas a sistema de coordenadas del PictureBox
-                // Aplicar escala y centrar en el origen
-                int centroX = pictureBox1.Width / 2;
-                int centroY = pictureBox1.Height / 2;
-
-                int px1 = centroX + (x1 * ESCALA);
-                int py1 = centroY - (y1 * ESCALA);
-                int px2 = centroX + (x2 * ESCALA);
-                int py2 = centroY - (y2 * ESCALA);
-
-                // Validar que los puntos estén dentro del área visible
-                if (!ValidarPuntoEnArea(px1, py1) || !ValidarPuntoEnArea(px2, py2))
-                {
-                    MessageBox.Show("Los puntos están fuera del área visible.\n" +
-                                  $"Use valores entre 0 y {pictureBox1.Width / (2 * ESCALA)} aproximadamente.", 
-                        "Fuera de rango", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                // Dibujar la línea usando el algoritmo DDA
-                algoritmo.DibujarLinea(g, px1, py1, px2, py2, Color.Blue, 3);
-
-                // Calcular y mostrar información de la pendiente
-                double pendiente = algoritmo.CalcularPendiente(x1, y1, x2, y2);
-                string infoPendiente = double.IsPositiveInfinity(pendiente) 
-                    ? "∞ (línea vertical)" 
-                    : pendiente.ToString("F2");
-
-                // Calcular distancia
-                double distancia = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
-
-                MessageBox.Show($"Línea dibujada correctamente.\n\n" +
-                              $"Punto inicial: ({x1}, {y1})\n" +
-                              $"Punto final: ({x2}, {y2})\n" +
-                              $"Pendiente: {infoPendiente}\n" +
-                              $"Distancia: {distancia:F2} unidades\n" +
-                              $"Escala aplicada: {ESCALA}x", 
-                              "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                pictureBox1.Refresh();
+                g.FillEllipse(brushInicio, px1 - 5, py1 - 5, 10, 10);
+                g.FillEllipse(brushFin, px2 - 5, py2 - 5, 10, 10);
             }
-            catch (Exception ex)
+
+            // Mostrar información inicial
+            txtResultado.Text = $"═══ SIMULACIÓN DDA ═══\r\n\r\n" +
+                $"Total de pasos: {puntosLinea.Count}\r\n" +
+                $"X incremento: {algoritmo.XIncremento:F3}\r\n" +
+                $"Y incremento: {algoritmo.YIncremento:F3}\r\n\r\n" +
+                $"Presione 'Paso' o espere...\r\n" +
+                $"━━━━━━━━━━━━━━━━━━━━━";
+
+            ActualizarEstadoBotones(true);
+            timerSimulacion.Start();
+            pictureBox1.Refresh();
+        }
+
+        private void btnPaso_Click(object sender, EventArgs e)
+        {
+            if (enSimulacion)
             {
-                MessageBox.Show($"Error al dibujar la línea: {ex.Message}", 
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                timerSimulacion.Stop();
+                EjecutarPaso();
             }
         }
 
-        private bool ValidarPuntoEnArea(int x, int y)
+        private void btnDetener_Click(object sender, EventArgs e)
         {
-            return x >= 0 && x < pictureBox1.Width && y >= 0 && y < pictureBox1.Height;
+            timerSimulacion.Stop();
+            
+            // Dibujar todos los píxeles restantes
+            for (int i = pasoActual; i < puntosLinea.Count; i++)
+            {
+                algoritmo.DibujarPixel(g, puntosLinea[i].X, puntosLinea[i].Y, Color.Blue, ESCALA - 2);
+            }
+
+            txtResultado.Text += $"\r\n\r\n¡SIMULACIÓN COMPLETADA!\r\nTotal píxeles: {puntosLinea.Count}";
+            ActualizarEstadoBotones(false);
+            pictureBox1.Refresh();
+        }
+
+        private void TimerSimulacion_Tick(object sender, EventArgs e)
+        {
+            EjecutarPaso();
+        }
+
+        private void EjecutarPaso()
+        {
+            if (pasoActual < puntosLinea.Count)
+            {
+                Point p = puntosLinea[pasoActual];
+                
+                // Dibujar el píxel actual con color destacado
+                algoritmo.DibujarPixel(g, p.X, p.Y, Color.Blue, ESCALA - 2);
+                
+                // Mostrar información del paso
+                if (pasoActual < algoritmo.PasosSimulacion.Count)
+                {
+                    var paso = algoritmo.PasosSimulacion[pasoActual + 1]; // +1 porque el primero es INICIO
+                    txtResultado.Text = $"═══ SIMULACIÓN DDA ═══\r\n\r\n" +
+                        $"PASO {pasoActual + 1} de {puntosLinea.Count}\r\n" +
+                        $"━━━━━━━━━━━━━━━━━━━━━\r\n" +
+                        $"{paso.Descripcion}\r\n" +
+                        $"━━━━━━━━━━━━━━━━━━━━━\r\n" +
+                        $"Píxel dibujado: ({paso.XRedondeado}, {paso.YRedondeado})";
+                }
+
+                pasoActual++;
+                pictureBox1.Refresh();
+            }
+            else
+            {
+                timerSimulacion.Stop();
+                txtResultado.Text += $"\r\n\r\n✓ ¡LÍNEA COMPLETADA!\r\nTotal píxeles: {puntosLinea.Count}";
+                ActualizarEstadoBotones(false);
+            }
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            // Limpiar todos los TextBox
+            timerSimulacion.Stop();
             txtX1.Clear();
             txtY1.Clear();
             txtX2.Clear();
             txtY2.Clear();
+            txtResultado.Clear();
 
-            // Limpiar el lienzo
             g.Clear(Color.White);
             DibujarCuadricula();
             DibujarEjes();
             pictureBox1.Refresh();
 
-            // Enfocar el primer TextBox
+            ActualizarEstadoBotones(false);
             txtX1.Focus();
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-            // Evento no utilizado
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            // Evento no utilizado
-        }
+        private void groupBox2_Enter(object sender, EventArgs e) { }
+        private void label3_Click(object sender, EventArgs e) { }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            // Liberar recursos
-            if (g != null)
-            {
-                g.Dispose();
-            }
-            if (bmp != null)
-            {
-                bmp.Dispose();
-            }
+            timerSimulacion.Stop();
+            timerSimulacion.Dispose();
+            if (g != null) g.Dispose();
+            if (bmp != null) bmp.Dispose();
             base.OnFormClosing(e);
         }
     }

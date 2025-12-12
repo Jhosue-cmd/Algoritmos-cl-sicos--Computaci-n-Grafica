@@ -11,3 +11,17 @@ C:\Users\NW\Desktop\Computacion Grafica\Algoritmo de lineas\obj\Debug\Algoritmo 
 C:\Users\NW\Desktop\Computacion Grafica\Algoritmo de lineas\obj\Debug\Algoritmo de lineas.exe.config
 C:\Users\NW\Desktop\Computacion Grafica\Algoritmo de lineas\obj\Debug\Algoritmo_de_lineas.frmHome.resources
 C:\Users\NW\Desktop\Computacion Grafica\Algoritmo de lineas\obj\Debug\Algoritmo_de_lineas.Relleno.view.frmFloodFills.resources
+C:\Users\NW\Algoritmos-cl-sicos--Computaci-n-Grafica\bin\Debug\Algoritmo de lineas.exe.config
+C:\Users\NW\Algoritmos-cl-sicos--Computaci-n-Grafica\bin\Debug\Algoritmo de lineas.exe
+C:\Users\NW\Algoritmos-cl-sicos--Computaci-n-Grafica\bin\Debug\Algoritmo de lineas.pdb
+C:\Users\NW\Algoritmos-cl-sicos--Computaci-n-Grafica\obj\Debug\Algoritmo de lineas.csproj.AssemblyReference.cache
+C:\Users\NW\Algoritmos-cl-sicos--Computaci-n-Grafica\obj\Debug\Algoritmo de lineas.exe.config
+C:\Users\NW\Algoritmos-cl-sicos--Computaci-n-Grafica\obj\Debug\Algoritmo_de_lineas.frmBresenham.resources
+C:\Users\NW\Algoritmos-cl-sicos--Computaci-n-Grafica\obj\Debug\Algoritmo_de_lineas.frmDDA.resources
+C:\Users\NW\Algoritmos-cl-sicos--Computaci-n-Grafica\obj\Debug\Algoritmo_de_lineas.frmHome.resources
+C:\Users\NW\Algoritmos-cl-sicos--Computaci-n-Grafica\obj\Debug\Algoritmo_de_lineas.Properties.Resources.resources
+C:\Users\NW\Algoritmos-cl-sicos--Computaci-n-Grafica\obj\Debug\Algoritmo_de_lineas.Relleno.view.frmFloodFills.resources
+C:\Users\NW\Algoritmos-cl-sicos--Computaci-n-Grafica\obj\Debug\Algoritmo de lineas.csproj.GenerateResource.cache
+C:\Users\NW\Algoritmos-cl-sicos--Computaci-n-Grafica\obj\Debug\Algoritmo de lineas.csproj.CoreCompileInputs.cache
+C:\Users\NW\Algoritmos-cl-sicos--Computaci-n-Grafica\obj\Debug\Algoritmo de lineas.exe
+C:\Users\NW\Algoritmos-cl-sicos--Computaci-n-Grafica\obj\Debug\Algoritmo de lineas.pdb

@@ -159,6 +159,9 @@
     <Compile Include="Relleno\view\frmScan-LineFill.Designer.cs">
       <DependentUpon>frmScan-LineFill.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Lineas\view\frmBresenham.resx">
+      <DependentUpon>frmBresenham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Lineas\view\frmDDA.resx">
       <DependentUpon>frmDDA.cs</DependentUpon>
     </EmbeddedResource>
